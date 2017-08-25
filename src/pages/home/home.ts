@@ -10,6 +10,7 @@ import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database
 export class HomePage {
   msg;
   imgurl;
+    //char;
   arr = [];
   convo: FirebaseListObservable<any>;
   constructor(public navCtrl: NavController,private http: Http, private db: AngularFireDatabase) {
@@ -41,5 +42,16 @@ export class HomePage {
       bot.msg = response.json().result.fulfillment.speech;
       this.db.list('/conversation').push(bot);
     })
+  }
+  check(event){
+    //console.log("evenntttt",event);
+    var char = event[event.length-1];
+    //event = event.substring(0,-1);
+   
+    if(char.charCodeAt(0) == 13){
+      console.log("char",char);
+      this.sendMessage();
+    }
+    
   }
 }

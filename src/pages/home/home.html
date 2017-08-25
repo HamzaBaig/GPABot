@@ -23,7 +23,7 @@
 
 <!-- <div class="card"> -->
 <ion-content padding>
-  <ion-card >
+  <!-- <ion-card > -->
     <ion-item>
       <ion-avatar item-start>
         <img src="../assets/images/bot.png">
@@ -58,17 +58,22 @@
         </ion-item>
       </ion-list>
     <!-- </ion-scroll> -->
-    <ion-toolbar>
-      <ion-item>
-        <ion-textarea class="textarea" placeholder="type a message..." [(ngModel)]="msg" name="msgs"></ion-textarea>
-      </ion-item>
-      <!-- <ion-button  end>check</ion-button> -->
-      <ion-buttons end>
-        <button ion-button (click)=sendMessage() end><ion-icon name="ios-send-outline"></ion-icon></button>
-      </ion-buttons>
-    </ion-toolbar>
+    
 
-  </ion-card>
+  <!-- </ion-card> -->
 </ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-item>
+          <ion-textarea class="textarea" placeholder="type a message..." [(ngModel)]="msg" name="msgs" ng-enter="sendMessage()" (ngModelChange)="check($event)"></ion-textarea>
+              <!-- <ion-input placeholder="type a message..." [(ngModel)]="msg" name="msg" ng-submit="sendmessage()"></ion-input> -->
+        </ion-item>
+        <!-- <ion-button  end>check</ion-button> -->
+        <ion-buttons end>
+          <button ion-button (click)=sendMessage() end><ion-icon style="width: 30px;" name="ios-send-outline"></ion-icon></button>
+        </ion-buttons>
+      </ion-toolbar>
+</ion-footer>
 
 <!-- </div> -->
