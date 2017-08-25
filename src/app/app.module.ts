@@ -17,12 +17,12 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 import {HttpModule } from '@angular/http';
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyAEXoPMhnD0nSFnhQ75zqVBF1Os-HlpEjk",
-  authDomain: "newagent-44adf.firebaseapp.com",
-  databaseURL: "https://newagent-44adf.firebaseio.com",
-  projectId: "newagent-44adf",
-  storageBucket: "newagent-44adf.appspot.com",
-  messagingSenderId: "851974111098"
+  apiKey: "AIzaSyBc45bR2oPqNtS_bX-1jzBYD46slGkCxr4",
+  authDomain: "hotelbookingbot-c9fce.firebaseapp.com",
+  databaseURL: "https://hotelbookingbot-c9fce.firebaseio.com",
+  projectId: "hotelbookingbot-c9fce",
+  storageBucket: "hotelbookingbot-c9fce.appspot.com",
+  messagingSenderId: "1092080390653"
 };
 
 @NgModule({

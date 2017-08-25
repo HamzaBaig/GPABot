@@ -34,9 +34,9 @@ export class HomePage {
     let bot = {name: 'bot' , imgurl: '../assets/images/bot.png' , msg: ''}
     let headers = new Headers()
     headers.append(
-      'Authorization' , 'Bearer 433d7e1a12584661b7b4e343bd13dd02'
+      'Authorization' , 'Bearer 0fc57fb62042401a9d56268a993ce643'
     )
-    this.http.get('https://api.api.ai/v1/query?v=20150910&query=' + this.msg + '&lang=en&sessionId=b565ca61-8f43-4bd9-9869-aaa2ddc1c795&timezone=Asia/Karachi',{headers: headers})
+    this.http.get('https://api.api.ai/v1/query?v=20150910&query=' + this.msg + '&lang=en&sessionId=a5292bd2-3af8-4ea2-b8b2-614db278e333&timezone=Asia/Karachi',{headers: headers})
     .subscribe((response)=>{
       bot.msg = response.json().result.fulfillment.speech;
       this.db.list('/conversation').push(bot);
