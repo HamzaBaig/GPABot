@@ -4,11 +4,15 @@ import db from '../db'
 
 export const apiaiWebhook = functions.https.onRequest((req, res) => {
 
+    let order = req.body.result.parameters;
+
     db.ref('/orders')
-        .push(req.body.result.parameters)
+        .push(order)
         .then(snapshot => {
             res.send({
-                speech: "from server - I have forwarded your order of hotel booking to our system admin, from $check-in to $check-out in $destination"
+                speech: `${order.name} I have forwarded your order of hotel booking
+                to our system, from ${order.checkIn} to ${order.checkOut}
+                in ${order.destination}`
             });
         });
 });
