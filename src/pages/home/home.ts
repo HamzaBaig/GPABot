@@ -18,7 +18,12 @@ export class HomePage {
   @ViewChild(Content) content: Content;
 
   constructor(public navCtrl: NavController, private http: Http, private db: AngularFireDatabase) {
-    this.convo = this.db.list('/conversation', { preserveSnapshot: true });
+    this.convo = this.db.list('/conversation', {
+      preserveSnapshot: true,
+      query: {
+        limitToLast: 30
+      }
+    });
     this.convo.subscribe(snapshots => {
       this.arr = [];
       snapshots.forEach(element => {
