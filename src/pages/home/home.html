@@ -13,23 +13,24 @@
     <p>Your guider</p>
   </ion-item>
   <ion-list *ngFor="let conv of arr" #messagelist>
-    <ion-item *ngIf="conv.name == 'bot'">
+    <ion-item *ngIf="conv.name == 'bot'" >
       <ion-avatar item-start>
         <img [src]="conv.imgurl">
       </ion-avatar>
 
-      <div [ngClass]="{'bot': conv.name == 'Bot' }">
+      <div [ngClass]="{'bot': conv.name == 'Bot' }" >
         <h2>{{conv.name}}</h2>
-        <p>{{conv.msg}}</p>
+        <p >{{conv.msg}}</p>
       </div>
     </ion-item>
-    <ion-item *ngIf="conv.name == 'you'">
+    <ion-item *ngIf="conv.name == 'you'" >
       <ion-avatar item-end>
         <img [src]="conv.imgurl">
       </ion-avatar>
-      <div class="msg" [ngClass]="{'you': conv.name == 'You' }">
-        <h2>{{conv.name}}</h2>
-        <p>{{conv.msg}}</p>
+      <div class="msg" [ngClass]="{'you': conv.name == 'You' }" >
+        <h2 style="float: right;">{{conv.name}}</h2>
+      <br>
+        <p style="white-space:normal;">{{conv.msg}}</p>
       </div>
 
     </ion-item>
