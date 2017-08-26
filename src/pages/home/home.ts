@@ -50,17 +50,17 @@ export class HomePage {
       this.db.list('/conversation').push(bot);
     })
   }
-  check(event){
-    //console.log("evenntttt",event);
-    var char = event[event.length-1];
-    //event = event.substring(0,-1);
+  // check(event){
+  //   //console.log("evenntttt",event);
+  //   var char = event[event.length-1];
+  //   //event = event.substring(0,-1);
    
-    if(char.charCodeAt(0) == 13){
-      console.log("char",char);
-      this.sendMessage();
-    }
+  //   if(char.charCodeAt(0) == 13){
+  //     console.log("char",char);
+  //     this.sendMessage();
+  //   }
     
-  }
+  //}
   // setTimeout(()=>{
 
   // },3000);
