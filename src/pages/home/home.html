@@ -17,23 +17,23 @@
 </ion-content> -->
 <ion-header>
   <ion-navbar>
-    <ion-title>chat Bot</ion-title>
+    <ion-title>Hotel Booking Order</ion-title>
   </ion-navbar>
 </ion-header>
 
 <!-- <div class="card"> -->
-<ion-content padding>
+<ion-content padding >
   <!-- <ion-card > -->
     <ion-item>
       <ion-avatar item-start>
         <img src="../assets/images/bot.png">
       </ion-avatar>
-      <h2>Chatbot</h2>
+      <h2>Hotel bot</h2>
       <p>Your guider</p>
     </ion-item>
     <!-- <ion-scroll> -->
-        <!-- <ion-scroll scrollY="true"> -->
-      <ion-list *ngFor="let conv of arr">
+        <!-- <ion-scroll > -->
+      <ion-list *ngFor="let conv of arr" id="item-list">
         <ion-item *ngIf="conv.name == 'bot'">
           <ion-avatar item-start>
             <img [src]="conv.imgurl">
@@ -53,7 +53,7 @@
           <div class="msg" [ngClass]="{'you': conv.name == 'You' }">
             <h2>{{conv.name}}</h2>
             <p>{{conv.msg}}</p>
-          </div>
+          </div>  
 
         </ion-item>
       </ion-list>
