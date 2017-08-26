@@ -1,79 +1,54 @@
-<!-- <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
-</ion-content> -->
 <ion-header>
   <ion-navbar>
     <ion-title>Hotel Booking Order</ion-title>
   </ion-navbar>
 </ion-header>
 
-<!-- <div class="card"> -->
 <ion-content padding >
-  <!-- <ion-card > -->
-    <ion-item>
+  <ion-item>
+    <ion-avatar item-start>
+      <img src="../assets/images/bot.png">
+    </ion-avatar>
+    <h2>Hotel bot</h2>
+    <p>Your guider</p>
+  </ion-item>
+  <ion-list *ngFor="let conv of arr" #messagelist>
+    <ion-item *ngIf="conv.name == 'bot'">
       <ion-avatar item-start>
-        <img src="../assets/images/bot.png">
+        <img [src]="conv.imgurl">
       </ion-avatar>
-      <h2>Hotel bot</h2>
-      <p>Your guider</p>
+
+      <div [ngClass]="{'bot': conv.name == 'Bot' }">
+        <h2>{{conv.name}}</h2>
+        <p>{{conv.msg}}</p>
+      </div>
     </ion-item>
-    <!-- <ion-scroll> -->
-        <!-- <ion-scroll > -->
-      <ion-list *ngFor="let conv of arr" id="item-list">
-        <ion-item *ngIf="conv.name == 'bot'">
-          <ion-avatar item-start>
-            <img [src]="conv.imgurl">
-          </ion-avatar>
-          <!-- <ion-avatar item-end >
-                <img [src]="conv.imgurl">
-                </ion-avatar> -->
-          <div [ngClass]="{'bot': conv.name == 'Bot' }">
-            <h2>{{conv.name}}</h2>
-            <p>{{conv.msg}}</p>
-          </div>
-        </ion-item>
-        <ion-item *ngIf="conv.name == 'you'">
-          <ion-avatar item-end>
-            <img [src]="conv.imgurl">
-          </ion-avatar>
-          <div class="msg" [ngClass]="{'you': conv.name == 'You' }">
-            <h2>{{conv.name}}</h2>
-            <p>{{conv.msg}}</p>
-          </div>  
+    <ion-item *ngIf="conv.name == 'you'">
+      <ion-avatar item-end>
+        <img [src]="conv.imgurl">
+      </ion-avatar>
+      <div class="msg" [ngClass]="{'you': conv.name == 'You' }">
+        <h2>{{conv.name}}</h2>
+        <p>{{conv.msg}}</p>
+      </div>
 
-        </ion-item>
-      </ion-list>
-    <!-- </ion-scroll> -->
-    
+    </ion-item>
+  </ion-list>
 
-  <!-- </ion-card> -->
+
 </ion-content>
 
 <ion-footer>
-    <ion-toolbar>
-        <ion-item>
-          <ion-textarea class="textarea" placeholder="type a message..." (keydown)=check($event) [(ngModel)]="msg" name="msgs"  ></ion-textarea>
-              <!-- <ion-input placeholder="type a message..." [(ngModel)]="msg" name="msg" ng-submit="sendmessage()"></ion-input> -->
-        </ion-item>
-        <!-- <ion-button  end>check</ion-button> -->
-        <ion-buttons end>
-          <button ion-button (click)=sendMessage() end><ion-icon style="width: 30px;" name="ios-send-outline"></ion-icon></button>
-        </ion-buttons>
-      </ion-toolbar>
+  <ion-toolbar>
+    <ion-item>
+      <ion-textarea class="textarea" placeholder="type a message..." (keydown)=check($event) [(ngModel)]="msg" name="msgs"></ion-textarea>
+      <!-- <ion-input placeholder="type a message..." [(ngModel)]="msg" name="msg" ng-submit="sendmessage()"></ion-input> -->
+    </ion-item>
+    <!-- <ion-button  end>check</ion-button> -->
+    <ion-buttons end>
+      <button ion-button (click)=sendMessage() end><ion-icon style="width: 30px;" name="ios-send-outline"></ion-icon></button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-footer>
 
 <!-- </div> -->

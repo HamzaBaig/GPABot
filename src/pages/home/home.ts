@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Http, Headers } from "@angular/http";
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { Content } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -14,21 +15,26 @@ export class HomePage {
   //char;
   arr = [];
   convo: FirebaseListObservable<any>;
+  @ViewChild(Content) content: Content;
+
   constructor(public navCtrl: NavController, private http: Http, private db: AngularFireDatabase) {
     this.convo = this.db.list('/conversation', { preserveSnapshot: true });
     this.convo.subscribe(snapshots => {
       this.arr = [];
       snapshots.forEach(element => {
-
         this.arr.push(element.val());
-        console.log("objjjj", this.arr);
       });
+
+      //for scroll down
+      setTimeout(() => {
+        this.content.scrollToBottom();
+      }, 0);
     })
   };
   ngOnChanges() {
     console.log('cheannndheh');
 
-    this.itemList.scrollTop = this.itemList.scrollHeight
+    //this.itemList.scrollTop = this.itemList.scrollHeight
 
   }
   sendMessage() {
