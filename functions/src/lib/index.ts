@@ -10,9 +10,7 @@ export const apiaiWebhook = functions.https.onRequest((req, res) => {
         .push(order)
         .then(snapshot => {
             res.send({
-                speech: `${order.name} I have forwarded your order of hotel booking
-                to our system, from ${order.checkIn} to ${order.checkOut}
-                in ${order.destination}`
+                speech: `${order.name} I have forwarded your order of hotel booking for ${order.guests} persons in ${order.destination} from ${order['chech-out']} to ${order['check-out']}`
             });
         });
 });
