@@ -10,6 +10,7 @@ import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database
 export class HomePage {
   msg;
   imgurl;
+   itemList = document.getElementById("item-list");
     //char;
   arr = [];
   convo: FirebaseListObservable<any>;
@@ -23,6 +24,12 @@ export class HomePage {
         console.log("objjjj",this.arr);
       });
     })
+  };
+  ngOnChanges(){
+    console.log('cheannndheh');
+    
+    this.itemList.scrollTop = this.itemList.scrollHeight
+    
   }
   sendMessage(){
     console.log(this.msg);
@@ -54,4 +61,7 @@ export class HomePage {
     }
     
   }
+  // setTimeout(()=>{
+
+  // },3000);
 }
