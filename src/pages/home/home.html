@@ -5,13 +5,7 @@
 </ion-header>
 
 <ion-content padding >
-  <ion-item>
-    <ion-avatar item-start>
-      <img src="../assets/images/bot.png">
-    </ion-avatar>
-    <h2>Hotel bot</h2>
-    <p>Your guider</p>
-  </ion-item>
+ 
   <ion-list *ngFor="let conv of arr" #messagelist>
     <ion-item *ngIf="conv.name == 'bot'" >
       <ion-avatar item-start>
