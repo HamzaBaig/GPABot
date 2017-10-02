@@ -1,5 +1,7 @@
 'use strict';
+
 var nodeExternals = require('webpack-node-externals');
+
 module.exports = {
     entry: './src/index.ts',
     output: {
@@ -19,7 +21,7 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: [ '.ts', '.tsx', '.js' ]
+        extensions: ['.ts', '.tsx', '.js']
     },
     externals: [nodeExternals()] // <-- Important
 };
