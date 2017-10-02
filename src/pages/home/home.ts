@@ -53,9 +53,9 @@ export class HomePage {
     let bot = { name: 'bot', imgurl: '../assets/images/bot.png', msg: '' }
     let headers = new Headers()
     headers.append(
-      'Authorization', 'Bearer 0fc57fb62042401a9d56268a993ce643'
+      'Authorization', 'Bearer 0dc83fb388664bb693a62d1fc4e9dc0a'
     )
-    this.http.get('https://api.api.ai/v1/query?v=20150910&query=' + this.msg + '&lang=en&sessionId=a5292bd2-3af8-4ea2-b8b2-614db278e333&timezone=Asia/Karachi', { headers: headers })
+    this.http.get('https://api.api.ai/v1/query?v=20150910&query=' + this.msg + '&lang=en&sessionId=2eff3468-6073-4351-b6a2-07f2605d5f4f&timezone=Asia/Karachi', { headers: headers })
       .subscribe((response) => {
         bot.msg = response.json().result.fulfillment.speech;
         this.db.list('/conversation').push(bot);

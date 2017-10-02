@@ -1,0 +1,47 @@
+<!--
+  Generated template for the SignupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>signup</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <!-- <img  width="200" class="img" height="200" src="../assets/images/lock.png"/> -->
+    <img  width="200" style="margin-left: 87px;" height="200" src="../assets/images/signup.png"/>
+    <ion-icon name="ios-person" style="filter: opacity(26%); margin-left: -216px;" md="md-person" ></ion-icon>
+    <ion-list style="margin: 13px 66px 7px;">
+      <!-- <ion-label floating class="design"><ion-icon name="md-person"></ion-icon>Username</ion-label> -->
+      <!-- <ion-input type="text"></ion-input> -->
+      
+      <!-- <i class="icon ion-email "></i> -->
+      <ion-item style="background:transparent; padding-left: 2px; border-top: none;">
+        
+        <!-- <i class="icon ion-email placeholder-icon"></i> -->
+      <ion-input type="text"  [(ngModel)]="username" placeholder="Username"></ion-input>
+    </ion-item>
+      <ion-item style="background:transparent; padding-left: 2px;  border-top: none;">
+          <!-- <ion-icon name="ios-person-outline"></ion-icon> -->
+        <ion-input type="text"  [(ngModel)]="email" placeholder="Email"></ion-input>
+      </ion-item>
+    
+      <ion-item style="background:transparent;  padding-left: 2px;  border-top: none;">
+        <ion-input type="password"  [(ngModel)]="password" placeholder="Password"></ion-input>
+      </ion-item>
+  
+    </ion-list>
+  
+    <div padding>
+        <button ion-button color="primary" (click)="gotoSignup()" style="width: 79px; margin-left: 129px; "  block>Sign Up</button>
+      <button ion-button color="primary" (click)="back()" style="width: 79px; margin-left: 217px;    margin-top: -49px;"  block>Back</button>
+    </div>
+  
+</ion-content>
