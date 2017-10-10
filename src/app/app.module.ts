@@ -7,6 +7,8 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import {LoginPage} from '../pages/login/login';
+import {SignupPage} from '../pages/signup/signup';
 
 import { AngularFireModule } from 'angularfire2';
 
@@ -17,12 +19,12 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 import {HttpModule } from '@angular/http';
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyBc45bR2oPqNtS_bX-1jzBYD46slGkCxr4",
-  authDomain: "hotelbookingbot-c9fce.firebaseapp.com",
-  databaseURL: "https://hotelbookingbot-c9fce.firebaseio.com",
-  projectId: "hotelbookingbot-c9fce",
-  storageBucket: "hotelbookingbot-c9fce.appspot.com",
-  messagingSenderId: "1092080390653"
+  apiKey: "AIzaSyChDcJ65ztpnwEArtdiOsSVbcfTGjpFkZs",
+  authDomain: "checking-67161.firebaseapp.com",
+  databaseURL: "https://checking-67161.firebaseio.com",
+  projectId: "checking-67161",
+  storageBucket: "checking-67161.appspot.com",
+  messagingSenderId: "258559503977"
 };
 
 @NgModule({
@@ -31,7 +33,9 @@ export const firebaseConfig = {
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    LoginPage,
+    SignupPage
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,9 @@ export const firebaseConfig = {
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    LoginPage,
+    SignupPage
   ],
   providers: [
     StatusBar,
